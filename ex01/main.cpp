@@ -1,18 +1,36 @@
-#include <iostream>
+#include "header.hpp"
 
-class PhoneBook {
-	Contact	Contact[8];
-};
+void	PhoneBook::addContactInfo(void)
+{
+}
 
-class	Contact {
-	std::string	FirstName;
-	std::string	LastName;
-	std::string	NickName;
-	std::string	PhoneNumber;
-	std::string	DarkestSecret;
-};
+void	searchContact()
+{
+
+}
 
 int	main(void)
 {
+	PhoneBook	phone;
+	std::string	choice;
 
+	PhoneBook::i = 0;
+	while (1)
+	{
+		std::cin >> choice;
+		if (choice == "ADD")
+		{
+			phone.addContactInfo();
+		}
+		// else if (choice == "SEARCH")
+		// {
+
+		// }
+		// else if (choice == "EXIT")
+		// {
+			
+		// }
+		else
+			std::cout << "Error: False choice" << std::endl;
+	}
 }
