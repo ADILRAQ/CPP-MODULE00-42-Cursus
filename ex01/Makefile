@@ -2,17 +2,19 @@ NAME = PhoneBook
 
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
+HEADER = PhoneBook.hpp Contact.hpp
 RM = rm -f
 
-SRC = main
+SRC = main Contact PhoneBook \
+
 OBJ = $(SRC:=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HEADER)
 	$(CC) $(FLAGS) $(OBJ) -o $@
 
-%.o: %.cpp
+%.o: %.cpp $(HEADER)
 	$(CC) $(FLAGS) -c $<
 
 clean:

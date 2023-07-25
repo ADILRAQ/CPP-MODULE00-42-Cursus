@@ -1,36 +1,30 @@
-#include "header.hpp"
-
-void	PhoneBook::addContactInfo(void)
-{
-}
-
-void	searchContact()
-{
-
-}
+#include "PhoneBook.hpp"
 
 int	main(void)
 {
 	PhoneBook	phone;
 	std::string	choice;
 
-	PhoneBook::i = 0;
-	while (1)
+	phone.initIndex();
+	std::cout << "Enter the choice: ";
+	while (std::getline(std::cin, choice))
 	{
-		std::cin >> choice;
-		if (choice == "ADD")
-		{
-			phone.addContactInfo();
-		}
-		// else if (choice == "SEARCH")
-		// {
-
-		// }
-		// else if (choice == "EXIT")
-		// {
-			
-		// }
-		else
-			std::cout << "Error: False choice" << std::endl;
+			if (choice == "\0")
+			{}
+			else if (choice == "ADD")
+			{
+				phone.addContactInfo();
+			}
+			else if (choice == "SEARCH")
+			{
+				phone.searchContact();
+			}
+			else if (choice == "EXIT")
+			{
+				break ;
+			}
+			else
+				std::cout << "Error: False choice !" << std::endl;
+		std::cout << "Enter the choice: ";
 	}
 }
