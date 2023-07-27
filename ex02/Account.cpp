@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:05:48 by araqioui          #+#    #+#             */
-/*   Updated: 2023/07/27 16:28:57 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/07/27 16:56:48 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ static void timeFormat(int exactTime)
 
 void Account::_displayTimestamp(void)
 {
-	std::time_t curTime = std::time(nullptr);
+	//Return the time in seconds from the epoch
+	std::time_t curTime = std::time(NULL);
+	// Convert that time in seconds to a readable time
 	std::tm     timeInfo = *std::localtime(&curTime);
 
 	std::cout << "[" << timeInfo.tm_year + 1900;
