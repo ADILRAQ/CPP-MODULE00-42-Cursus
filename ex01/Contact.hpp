@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/26 09:08:26 by araqioui          #+#    #+#             */
+/*   Updated: 2023/07/26 09:08:40 by araqioui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
@@ -14,11 +26,11 @@ class	Contact {
 
 	public:
 	// Seters
-		void			setFirstName(std::string firstname);
-		void			setLastName(std::string lastname);
-		void			setNickName(std::string nickname);
-		void			setPhoneNumber(std::string phonenumber);
-		void			setDarkestSecret(std::string darkestsecret);
+		void		setFirstName(std::string firstname);
+		void		setLastName(std::string lastname);
+		void		setNickName(std::string nickname);
+		void		setPhoneNumber(std::string phonenumber);
+		void		setDarkestSecret(std::string darkestsecret);
 	// Geters
 		std::string	getFirstName(void);
 		std::string	getLastName(void);
