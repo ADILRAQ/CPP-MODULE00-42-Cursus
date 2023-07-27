@@ -6,7 +6,7 @@
 #    By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/26 09:10:49 by araqioui          #+#    #+#              #
-#    Updated: 2023/07/27 09:27:32 by araqioui         ###   ########.fr        #
+#    Updated: 2023/07/27 10:57:24 by araqioui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 HEADER = Account.hpp
 RM = rm -f
 
-SRC = tests \
+SRC = tests Account \
 
 OBJ = $(SRC:=.o)
 
