@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:05:48 by araqioui          #+#    #+#             */
-/*   Updated: 2023/07/27 16:56:48 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/07/28 09:10:12 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@ static void timeFormat(int exactTime)
 
 void Account::_displayTimestamp(void)
 {
-	//Return the time in seconds from the epoch
 	std::time_t curTime = std::time(NULL);
-	// Convert that time in seconds to a readable time
-	std::tm     timeInfo = *std::localtime(&curTime);
+	std::tm timeInfo = *std::localtime(&curTime);
 
 	std::cout << "[" << timeInfo.tm_year + 1900;
 	timeFormat(timeInfo.tm_mon + 1);
@@ -45,7 +43,7 @@ void Account::_displayTimestamp(void)
 
 Account::Account(int deposit)
 {
-	static int  i;
+	static int i;
 
 	_displayTimestamp();
 	std::cout << "index:" << i++ << ";amount:" << deposit << ";created" << std::endl;
@@ -54,7 +52,7 @@ Account::Account(int deposit)
 	_nbAccounts = i;
 	_nbDeposits = 0;
 	_nbWithdrawals = 0;
-	_totalAmount += deposit;
+	_totalAmount += _amount;
 }
 
 Account::~Account(void)
@@ -63,27 +61,27 @@ Account::~Account(void)
 	std::cout << "index:" << _accountIndex << ";amount:" << checkAmount() << ";closed" << std::endl;
 }
 
-int   Account::getNbAccounts(void)
+int Account::getNbAccounts(void)
 {
 	return (_nbAccounts);
 }
 
-int   Account::getTotalAmount(void)
+int Account::getTotalAmount(void)
 {
 	return (_totalAmount);
 }
 
-int   Account::getNbDeposits(void)
+int Account::getNbDeposits(void)
 {
 	return (_totalNbDeposits);
 }
 
-int   Account::getNbWithdrawals(void)
+int Account::getNbWithdrawals(void)
 {
 	return (_totalNbWithdrawals);
 }
 
-int	Account::checkAmount(void) const
+int Account::checkAmount(void) const
 {
 	return (_amount);
 }
@@ -91,7 +89,7 @@ int	Account::checkAmount(void) const
 void Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
-	std::cout << "accounts:" << getNbAccounts() <<";total:" << getTotalAmount() << ";deposits:" << getNbDeposits() << ";withdrawals:" << getNbWithdrawals() << std::endl;
+	std::cout << "accounts:" << getNbAccounts() << ";total:" << getTotalAmount() << ";deposits:" << getNbDeposits() << ";withdrawals:" << getNbWithdrawals() << std::endl;
 	_totalAmount = 0;
 }
 

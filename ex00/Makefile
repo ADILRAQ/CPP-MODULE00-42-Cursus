@@ -6,7 +6,7 @@
 #    By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/26 09:05:55 by araqioui          #+#    #+#              #
-#    Updated: 2023/07/26 09:05:56 by araqioui         ###   ########.fr        #
+#    Updated: 2023/07/28 08:50:19 by araqioui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,10 @@ $(NAME): $(OBJ)
 	$(CC) $(FLAGS) -c $<
 
 clean:
-	$(RM) $(OBJ)
+	@ $(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	@ $(RM) $(NAME)
 
 re: fclean all
 

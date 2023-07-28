@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:08:22 by araqioui          #+#    #+#             */
-/*   Updated: 2023/07/26 09:08:23 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/07/28 08:47:01 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //--------------Seters--------------//
 
-void  Contact::setFirstName(std::string firstname)
+void 	Contact::setFirstName(std::string firstname)
 {
 	FirstName = firstname;
 }
