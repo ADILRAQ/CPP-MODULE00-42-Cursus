@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:05:48 by araqioui          #+#    #+#             */
-/*   Updated: 2023/08/03 16:25:58 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:50:43 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,17 @@ static void timeFormat(int exactTime)
 void Account::_displayTimestamp(void)
 {
 	std::time_t curTime;
-	std::tm timeInfo;
+	std::tm 	*timeInfo;
 
 	curTime = std::time(NULL);
-	timeInfo = *std::localtime(&curTime);
-	std::cout << "[" << timeInfo.tm_year + 1900;
-	timeFormat(timeInfo.tm_mon + 1);
-	timeFormat(timeInfo.tm_mday);
+	timeInfo = std::localtime(&curTime);
+	std::cout << "[" << timeInfo->tm_year + 1900;
+	timeFormat(timeInfo->tm_mon + 1);
+	timeFormat(timeInfo->tm_mday);
 	std::cout << "_";
-	timeFormat(timeInfo.tm_hour);
-	timeFormat(timeInfo.tm_min);
-	timeFormat(timeInfo.tm_sec);
+	timeFormat(timeInfo->tm_hour);
+	timeFormat(timeInfo->tm_min);
+	timeFormat(timeInfo->tm_sec);
 	std::cout << "] ";
 }
 
