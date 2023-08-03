@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:09:34 by araqioui          #+#    #+#             */
-/*   Updated: 2023/07/28 09:07:19 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/08/03 15:51:15 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ private:
 	static int	_totalNbDeposits;
 	static int	_totalNbWithdrawals;
 
-	static void	_displayTimestamp( void );
+	static void	_displayTimestamp( void ); 
 
 	int				_accountIndex;
 	int				_amount;

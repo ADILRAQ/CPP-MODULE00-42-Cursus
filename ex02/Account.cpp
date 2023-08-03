@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:05:48 by araqioui          #+#    #+#             */
-/*   Updated: 2023/07/28 09:10:12 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:25:58 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,6 @@ int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
-
-static void timeFormat(int exactTime)
-{
-	if (exactTime < 10)
-		std::cout << "0";
-	std::cout << exactTime;
-}
-
-void Account::_displayTimestamp(void)
-{
-	std::time_t curTime = std::time(NULL);
-	std::tm timeInfo = *std::localtime(&curTime);
-
-	std::cout << "[" << timeInfo.tm_year + 1900;
-	timeFormat(timeInfo.tm_mon + 1);
-	timeFormat(timeInfo.tm_mday);
-	std::cout << "_";
-	timeFormat(timeInfo.tm_hour);
-	timeFormat(timeInfo.tm_min);
-	timeFormat(timeInfo.tm_sec);
-	std::cout << "] ";
-}
 
 Account::Account(int deposit)
 {
@@ -59,6 +37,30 @@ Account::~Account(void)
 {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";amount:" << checkAmount() << ";closed" << std::endl;
+}
+
+static void timeFormat(int exactTime)
+{
+	if (exactTime < 10)
+		std::cout << "0";
+	std::cout << exactTime;
+}
+
+void Account::_displayTimestamp(void)
+{
+	std::time_t curTime;
+	std::tm timeInfo;
+
+	curTime = std::time(NULL);
+	timeInfo = *std::localtime(&curTime);
+	std::cout << "[" << timeInfo.tm_year + 1900;
+	timeFormat(timeInfo.tm_mon + 1);
+	timeFormat(timeInfo.tm_mday);
+	std::cout << "_";
+	timeFormat(timeInfo.tm_hour);
+	timeFormat(timeInfo.tm_min);
+	timeFormat(timeInfo.tm_sec);
+	std::cout << "] ";
 }
 
 int Account::getNbAccounts(void)

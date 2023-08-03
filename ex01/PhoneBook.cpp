@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:08:57 by araqioui          #+#    #+#             */
-/*   Updated: 2023/07/26 09:08:58 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:40:02 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,45 +15,51 @@
 void	PhoneBook::initIndex(void)
 {
 	i = 0;
+	fullContactList = false;
 }
 
 static std::string	readInput(void)
 {
 	std::string	str;
 
-	if (!std::getline(std::cin, str))
-		std::exit(EXIT_FAILURE);
-	return (str);
+	while (1)
+	{
+		if (!std::getline(std::cin, str))
+			std::exit(EXIT_FAILURE);
+		else if (!str[0])
+			std::cout << "Enter valid info: ";
+		else
+			return (str);
+	}
 }
 
 void  PhoneBook::addContactInfo(void)
 {
-	int	j;
-
-	j = i;
 	if (i == 8)
-		j = 7;
+	{
+		i = 0;
+		fullContactList = true;
+	}
 	std::cout << "Enter contact info :" << std::endl;
 	std::cout << "\tFirst Name: ";
-	member[j].setFirstName(readInput());
+	member[i].setFirstName(readInput());
 	std::cout << "\tLast Name: ";
-	member[j].setLastName(readInput());
+	member[i].setLastName(readInput());
 	std::cout << "\tNickname: ";
-	member[j].setNickName(readInput());
+	member[i].setNickName(readInput());
 	std::cout << "\tPhone Number: ";
-	member[j].setPhoneNumber(readInput());
+	member[i].setPhoneNumber(readInput());
 	std::cout << "\tDarkest Secret: ";
-	member[j].setDarkestSecret(readInput());
-	if (i < 8)
-		i++;
+	member[i].setDarkestSecret(readInput());
+	i++;
 }
 
 static void	printMenuBar(void)
 {
-	std::cout << "Index     |" \
+	std::cout << "     Index|" \
 				<< "First Name|" \
-				<< "Last Name |" \
-				<< "Nickname  |" \
+				<< " Last Name|" \
+				<< "  Nickname|" \
 				<< std::endl;
 }
 
@@ -70,13 +76,13 @@ static void	printInfo(std::string str, int countSpaces)
 	}
 	else
 	{
-		while (str[++i])
-			std::cout << str[i];
 		while (countSpaces)
 		{
 			std::cout << " ";
 			countSpaces--;
 		}
+		while (str[++i])
+			std::cout << str[i];
 		std::cout << "|";
 	}
 }
@@ -113,9 +119,9 @@ void	PhoneBook::searchContact(void)
 	std::cin.ignore();
 	if (0 > id || id > 7)
 		std::cout << "\tIndex out of range !" << std::endl;
-	else if (!i)
+	else if (!i && fullContactList == false)
 		std::cout << "\tNo contact available !" << std::endl;
-	else if (id >= i)
+	else if (id >= i && fullContactList == false)
 		std::cout << "\tNo contact available at " << id << "!" << std::endl;
 	else
 	{

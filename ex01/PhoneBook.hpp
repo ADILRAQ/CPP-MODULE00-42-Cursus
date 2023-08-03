@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:09:02 by araqioui          #+#    #+#             */
-/*   Updated: 2023/07/28 08:54:27 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:14:20 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class PhoneBook {
 	private:
 		Contact		member[8];
 		int			i;
+		bool		fullContactList;
 
 	public:
 		void		initIndex(void);
