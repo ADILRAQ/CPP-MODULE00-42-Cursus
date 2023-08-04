@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:05:48 by araqioui          #+#    #+#             */
-/*   Updated: 2023/08/03 16:50:43 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/08/04 08:31:36 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void Account::_displayTimestamp(void)
 	std::time_t curTime;
 	std::tm 	*timeInfo;
 
-	curTime = std::time(NULL);
+	curTime = std::time(nullptr);
 	timeInfo = std::localtime(&curTime);
 	std::cout << "[" << timeInfo->tm_year + 1900;
 	timeFormat(timeInfo->tm_mon + 1);
